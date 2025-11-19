@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.11)
+project(c-mdb_isready LANGUAGES C)
+add_executable (mdb_isready mdb_isready.c)
+find_package(mongoc 1.30.6 REQUIRED)
+target_link_libraries(mdb_isready mongoc::mongoc)
