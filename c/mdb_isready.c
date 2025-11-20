@@ -10,7 +10,7 @@ main (int argc, char *argv[])
     mongoc_client_t *client = mongoc_client_new (argv[1]);
     if (!client) {
         fprintf(stderr, "Failed to create client.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
     mongoc_client_set_appname(client, "mdb_isready");
     bson_t *command = BCON_NEW("hello", BCON_INT32(1));
@@ -21,7 +21,7 @@ main (int argc, char *argv[])
         bson_free(str);
     } else {
         fprintf(stderr, "%s\n", error.message);
-	return 1;
+        return EXIT_FAILURE;
     }
 
     bson_destroy(command);
