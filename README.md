@@ -22,6 +22,10 @@ In the `go` directory is the source for the general purpose arm64 and amd64 solu
 
 Why? Easier build solution.  Relatively small container size using scratch, ~13MB.
 
+### Rust Implementation
+
+Sure, why not.  We have this too.
+
 ## Example Usage
 
 
