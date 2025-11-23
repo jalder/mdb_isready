@@ -12,7 +12,7 @@
 #define PORT 27017
 
 int 
-main(void)
+main(int argc, char *argv[])
 {
 	int sockfd;
 	struct sockaddr_in servaddr;
@@ -24,11 +24,20 @@ main(void)
 		printf("socket creation failed...\n");
 		exit(0);
 	}
+	struct hostent *server;
+	server = gethostbyname(argv[1]);
+
+	if (server == NULL) {
+    		// Handle error: host not found
+    		fprintf(stderr,"ERROR, no such host\n");
+    		exit(0);
+	}
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = ntohl(INADDR_LOOPBACK);
-	servaddr.sin_port = htons(PORT);
+	memcpy(&servaddr.sin_addr.s_addr, server->h_addr_list[0], server->h_length);
+	int port = atoi(argv[2]);
+	servaddr.sin_port = htons(port);
 
 
 	struct MsgHeader {
