@@ -26,6 +26,10 @@ Why? Easier build solution.  Relatively small container size using scratch, ~13M
 
 Sure, why not.  We have this too.  Turns out, this is the smallest of the container image builds so far. Just shy of 10MB.
 
+### C-Diet Implementation
+
+An exploration in bit-banging or forcing BSON like db.hello() network communication with a MongoDB service.  No auth, no TLS support, but very small container image currently under 1MB uncompressed.
+
 ## Example Usage
 
 
