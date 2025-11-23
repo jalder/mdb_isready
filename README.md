@@ -24,7 +24,7 @@ Why? Easier build solution.  Relatively small container size using scratch, ~13M
 
 ### Rust Implementation
 
-Sure, why not.  We have this too.
+Sure, why not.  We have this too.  Turns out, this is the smallest of the container image builds so far. Just shy of 10MB.
 
 ## Example Usage
 
